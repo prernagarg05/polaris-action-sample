@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      COV_URL: "https://scan.coverity.com"
-      COV_USER: ${{ secrets.COV_USER }}
-      COVERITY_PASSPHRASE: ${{ secrets.COVERITY_PASSPHRASE }}
-      CSA: cov-analysis-linux64-2021.12.2
-      COVERITY_PROJECT: Pipeline_test
-      BLDCMD: mvn -B compile
-      CHECKERS: --webapp-security
+      COV_URL: "http://192.168.149.1:8081"
+      #COV_USER: ${{ secrets.COV_USER }}
+      #COVERITY_PASSPHRASE: ${{ secrets.COVERITY_PASSPHRASE }}
+      #CSA: cov-analysis-linux64-2021.12.2
+      #COVERITY_PROJECT: Pipeline_test
+      #BLDCMD: mvn -B compile
+      #CHECKERS: --webapp-security
 
     steps:
     - uses: actions/checkout@v2
