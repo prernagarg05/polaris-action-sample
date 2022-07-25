@@ -9,14 +9,16 @@ on:
 jobs:
   sigma_code_scanning_run_steps:
     runs-on: ubuntu-latest
-    container:
-      image: docker.io/sigsynopsys/sigma:latest
-      credentials:
-        username: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_PASSWORD }}
+    #container:
+    #  image: docker.io/sigsynopsys/sigma:latest
+     # credentials:
+   #     username: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_USERNAME }}
+    #    password: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_PASSWORD }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Pull image
+        run: docker pull sigsynopsys/sigma 
   
     #  - name: SIGMA analysis
     #    run: sigma analyze --format sarif .
