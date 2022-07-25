@@ -12,8 +12,8 @@ jobs:
     container:
       image: docker.io/sigsynopsys/sigma-release-image:latest
       credentials:
-        username: admin
-        password: admin
+        username: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_SIGSYNOPSYS_PASSWORD }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
