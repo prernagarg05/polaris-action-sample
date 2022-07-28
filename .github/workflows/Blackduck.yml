@@ -27,8 +27,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    #- name: Build with Maven
-    #  run: mvn -B package --file pom.xml
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
     - name: BlackDuck Scan
       uses: blackducksoftware/github-action@v2
      # with:
@@ -49,11 +49,11 @@ jobs:
     #- name: Blackduck
     #  uses: actions/synopsys-detect@master
       with:
-        args: --detect.project.name=Pipeline_test --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true --detect.project.version.name=2
+        args: --detect.project.name=Prerna_SCA --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true --detect.project.version.name=2
       
-    #- run: ls 
-    #- name: Upload Results
-    #  uses: actions/upload-artifact@v2
-    #  with:
-    #    name: Blackduck
-     #   path: /home/runner/work/mvnwebapp1/mvnwebapp1/
+     - run: ls 
+     - name: Upload Results
+       uses: actions/upload-artifact@v2
+       with:
+        name: Blackduck
+        path: /home/runner/work/polaris-action-sample/polaris-action-sample
