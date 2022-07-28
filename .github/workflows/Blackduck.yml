@@ -51,7 +51,8 @@ jobs:
       with:
         args: --detect.project.name=Prerna_SCA --detect.tools.excluded="DETECTOR" --blackduck.trust.cert=true --detect.risk.report.pdf=true --detect.project.version.name=2
       
-    - run: ls 
+    - run: ls /home/runner/blackduck/runs/2022-07-28-15-05-40-836/status/
+    - run: cat /home/runner/blackduck/runs/2022-07-28-15-05-40-836/status/status.json
     - name: Upload Results
       uses: actions/upload-artifact@v2
       with:
